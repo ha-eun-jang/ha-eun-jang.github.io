@@ -1,26 +1,34 @@
 # Site settings
-title: Klise Theme # site title
+title: Ha Eun Jang # site title
 description: >- # site description
-  He's writing in Bahasa about web technology and experience as a journal 
-  for documentation things that he learned, meet him <a href="https://github.com/piharpi" target="_blank" rel="noopener">@github</a>.
+  Researcher in HCI and AI exploring affective computing, 
+  AI-mediated communication, and culturally sensitive systems.
 lang: en-US # default lang
-timezone: Asia/Jakarta # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
-mode: dark # default theme "dark" | "light"
+timezone: Asia/Seoul # set your timezone
+image: # This image used for Open Graph more info https://ogp.me/
+repo: https://github.com/ha-eun-jang/ha-eun-jang.github.io.git # site repo [optional]
+mode: light # default theme "dark" | "light"
 
 # Profile settings
 author:
-  name: Jekyll Klisé # author name
-  bio: >- # tell to the world
-    The minimalist Jekyll theme, light and dark mode support, for running a personal site and blog, 
-    meet Klisé theme at <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">@github</a>.
-  username: username # general username
-  github: github_username # github username
-  twitter: twitter_username # twitter username
-  facebook: facebook_username # facebook username
-  email: your-email@email.com # email adress
-  avatar: /assets/img/avatar.jpg # change with your own avatar
+  name: Ha Eun Jang # author name
+  bio: | # tell to the world
+    Hello, I'm a second-year Master's student at  <a href="https://www.uicinnovation.yonsei.ac.kr/" target="_blank" rel="noopener">Underwood International College</a>,
+    Yonsei University, working with <a href="https://jyskwon.github.io/" target="_blank" rel="noopener">Prof. Jean Young Song</a> at the <a href="https://www.diag.kr/" target="_blank" rel="noopener">DIAG Lab</a>. 
+    
+    My research lies at the intersection of Human-Computer Interaction (HCI) and AI, 
+    with a focus on understanding how AI can serve as a human-centered tool that supports 
+    self-exploration and communication in complex social and cultural contexts.
+    Before joining DIAG Lab, I worked as a marketer and designer, which shaped my interdisciplinary 
+    perspective on human behavior, psychology, and the design of AI systems. 
+    I am always open to exploring new domains and emerging research questions.
+  username: ha-eun-jang # general username
+  github: ha-eun-jang # github username
+  twitter:  # twitter username
+  facebook:  # facebook username
+  email: j.haeun@yonsei.ac.kr # email adress
+  avatar: /assets/img/profile.jpg # change with your own avatar
+  position: "Master's Student @ Yonsei University" # job position
 
 # URL settings
 url: "https://klise.now.sh" #

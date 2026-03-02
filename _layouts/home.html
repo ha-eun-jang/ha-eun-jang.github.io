@@ -3,12 +3,176 @@ layout: default
 home: true
 ---
 
-<h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+<!-- <h3 class="posts-item-note" aria-label="Recent News">Recent News</h3>
 {%- for post in site.posts limit: site.number_of_posts -%}
 <article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+  <span class="post-item-date">{{ post.date | date: "%b %Y" }}</span>
   <h4 class="post-item-title">
     <a href="{{ post.url }}">{{ post.title | escape }}</a>
   </h4>
 </article>
-{%- endfor -%}
+{%- endfor -%} -->
+
+<!-- recent news section -->
+<h3 class="posts-item-note" aria-label="Recent News">Recent News</h3>
+
+<div id="news-list">
+  {% for post in site.posts %}
+  <article class="post-item news-item">
+    <span class="post-item-date">
+      {{ post.date | date: "%b %Y" }}
+    </span>
+    <h4 class="post-item-title">
+      <a href="{{ post.url }}">{{ post.title | escape }}</a>
+    </h4>
+  </article>
+  {% endfor %}
+</div>
+
+<button id="toggle-news" class="toggle-btn">Show More</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const newsItems = document.querySelectorAll("#news-list .news-item");
+  const toggleBtn = document.getElementById("toggle-news");
+
+  const defaultVisible = 5;
+  let expanded = false;
+
+  function updateVisibility() {
+    newsItems.forEach((item, index) => {
+      if (index < defaultVisible || expanded) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    toggleBtn.textContent = expanded ? "Show Less" : "Show More";
+  }
+
+  toggleBtn.addEventListener("click", function () {
+    expanded = !expanded;
+    updateVisibility();
+  });
+
+  updateVisibility();
+});
+</script>
+
+<h3 id="publications" class="section-title">Publications</h3>
+
+<!-- publication filter buttons -->
+<div class="pub-filter">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="conference">Conference Papers</button>
+  <button class="filter-btn" data-filter="workshop">Workshops & Posters</button>
+</div>
+
+<div class="publications-list">
+
+  <!-- Conference -->
+  <div class="pub-item" data-category="conference">
+  <div class="pub-content">
+
+    <div class="pub-title">
+      Caught by Surprise, Caught by Culture: Bridging Facial Expression’s Recognition and Interpretation of Surprise Across Cultures
+    </div>
+
+    <div class="pub-authors">
+      <span class="author-me">Ha Eun Jang</span>, Yeonsun Yang and Jean Y. Song
+    </div>
+
+    <div class="pub-venue">
+      IUI 2026 (To Appear) · Full Paper
+    </div>
+
+    <div class="pub-links">
+      <a href="#">PDF</a> ·
+      <a href="#">DOI</a>
+    </div>
+
+  </div>
+</div>
+
+  <div class="pub-item" data-category="conference">
+  <div class="pub-content">
+
+    <div class="pub-title">
+      Visual Mental Imagery Induced by AI-Generated Music: Effects of Source Labeling on Imagery Intensity and Content
+    </div>
+
+    <div class="pub-authors">
+      <span class="author-me">Ha Eun Jang</span>, Saebyul Park and Jean Y. Song
+    </div>
+
+    <div class="pub-venue">
+      HCI Korea 2026 · Full Paper
+    </div>
+
+    <div class="pub-links">
+      <a href="/assets/pdf/hcikorea2026_VMI.pdf" target="_blank">PDF</a> ·
+      <a href="#">DOI</a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Workshop -->
+  <div class="pub-item" data-category="workshop">
+  <div class="pub-content">
+
+    <div class="pub-title">
+      When AI Is Not Optional: Structural Constraint and Participation in Intercultural Healthcare Communication
+    </div>
+
+    <div class="pub-authors">
+      <span class="author-me">Ha Eun Jang</span>, Kyung Bae Kim, Leslie Karlotta Gawor, Jean Y. Song* and Younah Kang*
+    </div>
+
+    <div class="pub-venue">
+      CHI 2026 · Workshop
+    </div>
+
+    <div class="pub-note">
+      * Co-corresponding authors
+    </div>
+
+    <div class="pub-links">
+      <a href="/assets/pdf/CHI2026_workshop.pdf" target="_blank">PDF</a>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const publications = document.querySelectorAll(".pub-item");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+
+      const filter = this.getAttribute("data-filter");
+
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      publications.forEach(pub => {
+        if (filter === "all") {
+          pub.style.display = "grid";
+        } else if (pub.getAttribute("data-category") === filter) {
+          pub.style.display = "grid";
+        } else {
+          pub.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+});
+</script>
