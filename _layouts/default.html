@@ -7,26 +7,19 @@ layout: compress
 
 <!-- <body data-theme="{{ site.mode }}" class="notransition"> -->
 <!-- <body {% if site.mode == "dark" %}data-theme="dark"{% endif %} class="notransition"> -->
-  <body {% if site.mode == "dark" %}data-theme="dark"{% endif %}></body>
+  <body {% if site.mode == "dark" %}data-theme="dark"{% endif %}>
   <script>
     const body = document.body;
-    const data = body.getAttribute("data-theme");
 
     const initTheme = (state) => {
       if (state === "dark") {
         body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
       } else {
-        localStorage.setItem("theme", data);
+        body.removeAttribute("data-theme");
       }
     };
- 
-    initTheme("light");
-    
-    // setTimeout(() => body.classList.remove("notransition"), 75);
-    body.removeAttribute("data-theme");
-    localStorage.removeItem("theme");
+
+    initTheme(localStorage.getItem("theme") || "light");
   </script>
 
   {% include navbar.html %}
@@ -37,5 +30,21 @@ layout: compress
     </main>
     {% include footer.html %}
   </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".menu-link");
+    const menuLabel = document.querySelector('label[for="menu-trigger"]');
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        requestAnimationFrame(() => {
+          menuLabel.click();
+        });
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -427,17 +427,9 @@
 
 // publications
 #publications {
-  font-size: 1.8rem;   // 기본 h3보다 크게
-  font-weight: 600;
-}
-
-#publications {
   font-size: 2rem;
   font-weight: 700;
-}
-
-#publications {
-  margin-top: 4rem;   // 기본보다 더 띄움
+  margin-top: 4rem;
 }
 
 .pub-filter {
@@ -464,6 +456,27 @@
   background-color: $black;    // 테마 기본 강조색
   color: $white;
   border-color: $black;
+}
+
+/* 모바일에서만 필터 버튼 정리 */
+@media (max-width: 768px) {
+
+  .pub-filter {
+    display: flex;
+    flex-direction: column;   // 세로 정렬
+    align-items: center;      // 가운데 정렬
+    gap: 0.8rem;              // 버튼 사이 간격
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;    // 아래 여백 좀 더 줘서 균형 맞추기
+  }
+
+  .filter-btn {
+    width: auto;
+    min-width: 180px;         // 버튼 너비 통일감
+    text-align: center;
+    margin-right: 0;          // 기존 오른쪽 마진 제거
+  }
+
 }
 
 .pub-item {
