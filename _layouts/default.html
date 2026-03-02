@@ -47,5 +47,24 @@ layout: compress
   });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const modeBtn = document.getElementById("mode");
+
+  modeBtn.addEventListener("click", function () {
+    const current = body.getAttribute("data-theme");
+
+    if (current === "dark") {
+      body.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    } else {
+      body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
