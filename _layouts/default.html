@@ -110,6 +110,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  
+  const links = document.querySelectorAll(".menu-link");
+  const menuCheckbox = document.getElementById("menu-trigger");
+
+  links.forEach(link => {
+    link.addEventListener("click", function () {
+      if (menuCheckbox) {
+        menuCheckbox.checked = false;
+      }
+    });
+  });
+
+
 
 });
 </script>
