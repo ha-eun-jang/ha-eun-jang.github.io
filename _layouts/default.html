@@ -5,23 +5,12 @@ layout: compress
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
 {% include header.html %}
 
+  
+
 <!-- <body data-theme="{{ site.mode }}" class="notransition"> -->
 <!-- <body {% if site.mode == "dark" %}data-theme="dark"{% endif %} class="notransition"> -->
   <body {% if site.mode == "dark" %}data-theme="dark"{% endif %}>
     <div id="top"></div>
-  <!-- <script>
-    const body = document.body;
-
-    const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else {
-        body.removeAttribute("data-theme");
-      }
-    };
-
-    initTheme(localStorage.getItem("theme") || "light");
-  </script> -->
 
   {% include navbar.html %}
   <div class="wrapper">
@@ -32,53 +21,6 @@ layout: compress
     {% include footer.html %}
   </div>
 
-  <!-- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll(".menu-link");
-    const menuLabel = document.querySelector('label[for="menu-trigger"]');
-
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        requestAnimationFrame(() => {
-          menuLabel.click();
-        });
-      });
-    });
-  });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const body = document.body;
-  const saved = localStorage.getItem("theme");
-
-  if (saved === "dark") {
-    body.setAttribute("data-theme", "dark");
-  } else {
-    body.removeAttribute("data-theme");
-  }
-
-  const modeBtn = document.getElementById("mode");
-
-  if (modeBtn) {
-    modeBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const current = body.getAttribute("data-theme");
-
-      if (current === "dark") {
-        body.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-      } else {
-        body.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      }
-    });
-  }
-
-});
-</script> -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -110,19 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  
-  const links = document.querySelectorAll(".menu-link");
-  const menuCheckbox = document.getElementById("menu-trigger");
-
-  links.forEach(link => {
-    link.addEventListener("click", function () {
-      if (menuCheckbox) {
-        menuCheckbox.checked = false;
-      }
-    });
-  });
-
-
 
 });
 </script>
