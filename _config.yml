@@ -5,9 +5,9 @@ description: >- # site description
   AI-mediated communication, and culturally sensitive systems.
 lang: en-US # default lang
 timezone: Asia/Seoul # set your timezone
-image: # This image used for Open Graph more info https://ogp.me/
+image: /assets/img/main_img.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/ha-eun-jang/ha-eun-jang.github.io.git # site repo [optional]
-mode: light # default theme "dark" | "light"
+mode: "light" # default theme "dark" | "light"
 
 # Profile settings
 author:
