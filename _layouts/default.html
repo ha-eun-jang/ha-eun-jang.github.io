@@ -6,8 +6,8 @@ layout: compress
 {% include header.html %}
 
 <!-- <body data-theme="{{ site.mode }}" class="notransition"> -->
-<body {% if site.mode == "dark" %}data-theme="dark"{% endif %} class="notransition">
-  
+<!-- <body {% if site.mode == "dark" %}data-theme="dark"{% endif %} class="notransition"> -->
+  <body {% if site.mode == "dark" %}data-theme="dark"{% endif %}></body>
   <script>
     const body = document.body;
     const data = body.getAttribute("data-theme");
@@ -24,7 +24,9 @@ layout: compress
  
     initTheme("light");
     
-    setTimeout(() => body.classList.remove("notransition"), 75);
+    // setTimeout(() => body.classList.remove("notransition"), 75);
+    body.removeAttribute("data-theme");
+    localStorage.removeItem("theme");
   </script>
 
   {% include navbar.html %}
