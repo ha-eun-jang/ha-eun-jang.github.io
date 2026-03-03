@@ -1,9 +1,10 @@
 - title: home
-  url: /#top
+  url: "#top"
   external: false
 
 - title: publications
-  url: /#publications
+  url: "#publications"
+  external: false
 
 - title: CV
   url: /assets/pdf/CV_haeun.pdf

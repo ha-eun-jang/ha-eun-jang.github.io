@@ -2,17 +2,15 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {% include header.html %}
 
-  
+<body>
 
-<!-- <body data-theme="{{ site.mode }}" class="notransition"> -->
-<!-- <body {% if site.mode == "dark" %}data-theme="dark"{% endif %} class="notransition"> -->
-  <body {% if site.mode == "dark" %}data-theme="dark"{% endif %}>
-    <div id="top"></div>
+  <div id="top"></div>
 
   {% include navbar.html %}
+
   <div class="wrapper">
     {% include author.html %}
     <main aria-label="Content">
@@ -21,40 +19,37 @@ layout: compress
     {% include footer.html %}
   </div>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".menu-link");
+    const menuTrigger = document.getElementById("menu-trigger");
 
-  const body = document.body;
-  const saved = localStorage.getItem("theme");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
 
-  // 초기 테마 적용
-  if (saved === "dark") {
-    body.setAttribute("data-theme", "dark");
-  } else {
-    body.removeAttribute("data-theme");
-  }
+        const href = this.getAttribute("href");
 
-  const modeBtn = document.getElementById("mode");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
 
-  if (modeBtn) {
-    modeBtn.addEventListener("click", function (e) {
-      e.preventDefault();
+          if (menuTrigger) {
+            menuTrigger.checked = false;
+          }
 
-      const current = body.getAttribute("data-theme");
+          const target = document.querySelector(href);
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: "smooth" });
+            }, 50);
+          }
+        }
 
-      if (current === "dark") {
-        body.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-      } else {
-        body.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      }
+      });
     });
-  }
 
-});
-</script>
+  });
+  </script>
 
 </body>
 </html>

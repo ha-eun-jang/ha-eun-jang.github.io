@@ -367,3 +367,15 @@ mark,
     }
   }
 }
+
+.menu-link:focus {
+  outline: none !important;
+}
+
+.menu-link:active {
+  outline: none !important;
+}
+
+.menu-link {
+  -webkit-tap-highlight-color: transparent;
+}
