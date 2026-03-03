@@ -19,37 +19,78 @@ layout: compress
     {% include footer.html %}
   </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
 
-    const menuLinks = document.querySelectorAll(".menu-link");
-    const menuTrigger = document.getElementById("menu-trigger");
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    menuLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
+  const menuLinks = document.querySelectorAll(".menu-link");
+  const menuTrigger = document.getElementById("menu-trigger");
 
-        const href = this.getAttribute("href");
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
 
-        if (href && href.startsWith("#")) {
-          e.preventDefault();
+      const href = this.getAttribute("href");
 
-          if (menuTrigger) {
-            menuTrigger.checked = false;
-          }
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
 
-          const target = document.querySelector(href);
-          if (target) {
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: "smooth" });
-            }, 50);
-          }
+        if (menuTrigger) {
+          menuTrigger.checked = false;
         }
 
-      });
-    });
+        const target = document.querySelector(href);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth" });
+          }, 50);
+        }
+      }
 
+    });
   });
-  </script>
+
+});
+</script> -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuTrigger = document.getElementById("menu-trigger");
+  const wrapper = document.querySelector(".wrapper");
+  const menuLinks = document.querySelectorAll(".menu-link");
+
+  if (menuTrigger) {
+    menuTrigger.addEventListener("change", function () {
+      if (menuTrigger.checked) {
+        wrapper.classList.add("blurry");
+      } else {
+        wrapper.classList.remove("blurry");
+      }
+    });
+  }
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+
+        menuTrigger.checked = false;
+        wrapper.classList.remove("blurry");
+
+        const target = document.querySelector(href);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth" });
+          }, 50);
+        }
+      }
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>
