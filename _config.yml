@@ -13,10 +13,10 @@ mode: "light" # default theme "dark" | "light"
 author:
   name: Ha Eun Jang # author name
   bio: | # tell to the world
-    Hello, I'm a second-year Master's student at  <a href="https://www.uicinnovation.yonsei.ac.kr/" target="_blank" rel="noopener">Underwood International College</a>,
-    Yonsei University, working with <a href="https://jyskwon.github.io/" target="_blank" rel="noopener">Prof. Jean Young Song</a> at the <a href="https://www.diag.kr/" target="_blank" rel="noopener">DIAG Lab</a>. 
+    Hello, I'm an incoming PhD student at  <a href="https://inv.yonsei.ac.kr/uic_inno/index.do" target="_blank" rel="noopener">Underwood International College</a>,
+    Yonsei University, working with <a href="https://jyskwon.github.io/" target="_blank" rel="noopener">Prof. Jean Y. Song</a> at the <a href="https://www.diag.kr/" target="_blank" rel="noopener">DIAG Lab</a>. 
     
-    My research lies at the intersection of Human-Computer Interaction (HCI) and AI, 
+    My research lies at the intersection of Human-Computer Interaction and AI, 
     with a focus on understanding how AI can serve as a human-centered tool that supports 
     self-exploration and communication in complex social and cultural contexts.
     Before joining DIAG Lab, I worked as a marketer and designer, which shaped my interdisciplinary 
@@ -28,7 +28,7 @@ author:
   facebook:  # facebook username
   email: j.haeun@yonsei.ac.kr # email adress
   avatar: /assets/img/profile.jpg # change with your own avatar
-  position: "Master's Student @ Yonsei University" # job position
+  position: "PhD Student @ Yonsei University" # job position
 
 # URL settings
 url: "https://klise.now.sh" #
